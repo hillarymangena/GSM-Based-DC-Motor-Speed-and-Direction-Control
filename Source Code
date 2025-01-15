@@ -1,6 +1,5 @@
 #include <SoftwareSerial.h>
 char inchar;
-46
 int a;
 SoftwareSerial SIM900(3, 4); // RX and TX pins respectively
 int pwm = 11; // pin able to offer pwm signal for speed control
@@ -25,7 +24,7 @@ delay(200);
 SIM900.print("AT+CNMI=2,2,0,0,0\r");
 // when sms infor is received by the gsm TX, block out
 // contents of that sms to avoid reccurrance
-47
+
 delay(200);
 Serial.println("Ready...");
 }
@@ -51,7 +50,7 @@ inchar=SIM900.read();
 if (inchar=='w')
 {
 delay(10);
-48
+
 char inchar=SIM900.read();
 if (inchar >= '0' && inchar <= '8')
 {
@@ -76,7 +75,7 @@ else if (inchar=='1')
 digitalWrite(mc2, HIGH);
 }
 delay(10);
-49
+
 inchar=SIM900.read();
 if (inchar=='y')
 {
